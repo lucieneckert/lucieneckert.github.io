@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}
+{{section.title}}
+{% endblock title %}
+
+{% block content %}
+
+<h1>{{section.title}}</h1>
+<p>{{section.description}}</p>
+
+{% for subsection_name in section.subsections %}
+  {% set subsection = get_section(path=subsection_name) %}
+  <h2 style="border-bottom: 2px solid black">{{subsection.title}}</h2>
+  {% if subsection.description %}<p>{{subsection.description}}</p>{% endif %}
+  <ul class="projects-list">
+  {% for project in subsection.pages %}
+    <li>
+      <a href="{{ project.permalink }}">
+        <img src="{{ project.permalink }}/{{ project.extra.thumbnail }}" alt="">
+        <div>
+          <h3>{{ project.title }}</h3>
+          {% if project.description %}<span>{{ project.description }}</span>{% endif %}
+          <ul class="flex-h tags">
+            {% for tag in project.extra.tags %}
+            <li class="tag">{{tag}}</li>
+            {% endfor %}
+          </ul>
+        </div>
+      </a>
+    </li>
+  {% endfor %}
+</ul>
+{% endfor %}
+
+{% endblock content %}

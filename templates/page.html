@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}
+{{page.title}}
+{% endblock title %}
+
+{% block content %}
+
+<h1 style="border-left: 5px solid #202020; padding-left: 1rem">{{page.title}}</h1>
+<p>{{page.extra.era}}</p>
+<ul class="flex-h tags">
+  {% for tag in page.extra.tags %}
+  <li class="tag">{{tag}}</li>
+  {% endfor %}
+</ul>
+
+{{ page.content | safe }}
+
+<a href="/projects" class="retro-button">🡄 Back to Projects</a>
+
+{% endblock content %}

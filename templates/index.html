@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+{% block title %}
+Index
+{% endblock title %}
+
+{% block content %}
+<div class="flex-h">
+  <img class="pfp-desktop" src="gitpfp.bmp" alt="Profile picture (grainy, saturated image of Newton, one of my cats)">
+  <section>
+    <div class="intro-header">
+      <img class="pfp-mobile" src="gitpfp.bmp" alt="">
+      <div>
+        <h1>Hi! I'm Lucien, 🍻</h1>
+        <span>Software Engineer and Game Dev Hobbyist.</span>
+      </div>
+    </div>
+    <p>A little bit about me --</p>
+    <ul class="intro-list">
+      <li>
+        <span>🎓</span>
+        <p>
+          I finished my undergrad at Cornell University with a BA in Information Science, alongside a minor in Game Design, in December 2022.
+          I subsequently finished a Masters of Professional Studies, also in Info Sci at Cornell, in May 2023.
+        </p>
+      </li>
+      <li>
+        <span>💼</span>
+        <p>
+          I graduated somewhat recently, but since then I've worked full-time as a backend software engineer.
+          I also have multiple years of frontend internship experience, so I'm comfortable with picking up a variety of tools across the stack.
+          I'm also learning more about programming language design on the side, as an excuse to get more comfortable with Rust and Haskell. 
+        </p>
+      </li>
+      <li>
+        <span>🎮</span>
+        <p>
+          In my free time, I have a passion for making (and playing!) digital and tabletop games. 
+          I've worked with popular game engines like Godot and Unity on tasks that fall under both the development and design umbrellas.
+          I love the interdisciplinary collaboration fostered by game dev projects, and always particularly enjoy learning more about pixel art, 3D modeling, and music composition!
+        </p>
+      </li>
+    </ul>
+    <h2 style="font-size: 1.25rem; margin-top: 0rem">Welcome to my portfolio! ☺️</h2>
+    <section class="intro-links">
+      <a href="/resume-2024.pdf" class="retro-button" style="display: flex"><img src="/icons/pdf.png"/><span style="display: inline-flex; margin-left: 0.5rem; align-items: center">Download Resume</span></a>
+      <a href="https://github.com/lucieneckert" class="retro-button"> <img src="/icons/github.svg" alt="GitHub"/></a>
+      <a href="https://www.linkedin.com/in/lucien-eckert/" class="retro-button"> <img src="/icons/linkedin.svg" alt="LinkedIn"/></a>
+      <a href="mailto:lee48@cornell.edu" class="retro-button"> <img src="/icons/email.svg" alt="Email"/></a>
+    </section>
+  </section>
+</div>
+
+<section style="background-color: whitesmoke; border-radius: 1rem; padding-top: 0.5rem; margin-top: 2rem">
+  <h2 style="margin: 0.5rem">🎨 Featured Game Dev Projects</h2>
+  <ul class="featured-list">
+    <li>
+      <a href="/projects/games/box-of-squingus">
+        <img src="/featured-gifs/squingus.gif" alt=""/>
+      </a>
+      <p>
+        You can play <a href="/projects/games/box-of-squingus" style="font-weight: bold">Box of Squingus</a>, a submission to Ludum Dare 54 I worked on back in October, <a href="https://sprodsoft.itch.io/box-of-squingus">in your browser right now</a>!
+      </p>
+    </li>
+    <li>
+      <a href="/projects/games/ragdoll-royale">
+        <img src="/featured-gifs/ragdoll.gif" alt=""/>
+      </a>
+      <p>
+        <a href="/projects/games/ragdoll-royale" style="font-weight: bold">Ragdoll Royale</a> is the most ambitious game project I've worked on so far, with a team of 8 people for the graduate-level course <a href="https://classes.cornell.edu/browse/roster/SP22/class/INFO/4152">INFO/CS 4152: Advanced Topics in Computer Game Design</a>.
+      </p>
+    </li>
+    <li>
+      <a href="/projects/games/juiceboxes">
+        <img src="/featured-gifs/juiceboxes.gif" alt=""/>
+      </a>
+      <p>
+        <a href="/projects/games/juiceboxes" style="font-weight: bold">A Small Game About Juiceboxes</a> was my project over lockdown -- I did all the design and development work solo!
+      </p>
+    </li>
+  </ul>
+</section>
+
+{% endblock content %}

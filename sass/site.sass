@@ -1,0 +1,263 @@
+@import 'https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap'
+  
+$max-body-width: 1100px
+$breakpoint-mobile: 800px
+$background-color: whitesmoke
+$foreground-color: white
+$text-color: #202020
+$link-color: darkcyan
+
+// General definitions
+
+.flex-h
+  display: flex
+
+@mixin reset-list
+  margin-left: -40px
+  list-style: none
+
+.retro-button
+  display: inline-block
+  padding: 0.25rem 0.5rem
+  background-color: $foreground-color
+  text-decoration: none
+  border: 2px solid $text-color
+  border-radius: 0.5rem
+  filter: drop-shadow(2.5px 2.5px $text-color)
+  transition: 0.1s
+  &:focus, &:hover
+    transform: translate(-2.5px, -2.5px)
+    filter: drop-shadow(5px 5px $text-color)
+  &:active
+    transform: translate(2.5px, 2.5px)
+    background-color: #202020
+    color: white
+    filter: drop-shadow(0px 0px $text-color)
+
+.tags
+  @include reset-list
+  flex-wrap: wrap
+
+.tag
+  margin: 0.1rem 0rem
+  margin-right: 0.5rem
+  padding: 0.1rem 0.25rem
+  background-color: $text-color
+  color: whitesmoke
+  font-size: 0.8rem
+  white-space: nowrap
+
+html
+  background-color: $background-color
+
+body
+  margin: 1rem auto
+  max-width: $max-body-width
+  font-family: 'Atkinson Hyperlegible', sans-serif
+  a
+    color: $link-color
+
+main
+  padding: 1rem 2rem
+  background-color: $foreground-color
+  color: $text-color
+  border-radius: 1rem
+  outline: 2px solid black
+
+footer
+  color: dimgrey
+  float: right
+  margin: 0.5rem
+
+nav
+  display: flex
+  margin-bottom: 1rem
+  justify-content: flex-start
+  a
+    margin-right: 0.5rem
+    padding: 0.5rem 1rem !important // .retro-button clash
+
+img
+  max-width: 100%
+  image-rendering: crisp-edges
+
+// Index page
+
+.site-name
+  color: dimgrey
+  margin-bottom: 0.5rem
+  &::before
+    content: '// '
+  span
+    color: grey
+
+.pfp-mobile
+  border-radius: 1rem
+  max-height: 6rem
+  @media (min-width: $breakpoint-mobile)
+    display: none
+
+.pfp-desktop
+  margin: 1rem
+  padding: 1rem
+  max-height: 16rem
+  border-radius: 4rem
+  object-fit: scale-down
+  @media (max-width: $breakpoint-mobile)
+    display: none
+  
+.intro-header
+  display: flex
+  > *
+    margin-right: 1rem
+  > * > h1
+    margin-bottom: 0rem
+    margin-top: 0rem
+    font-size: 2rem
+  > * > span
+    font-weight: bold
+    font-size: 1.25rem
+  
+.intro-list 
+  margin-bottom: 0rem
+  li
+    @include reset-list
+    display: flex
+    span
+      font-size: 1.5rem
+      margin-right: 0.5rem
+    p
+      margin-top: 0rem
+
+.intro-links
+  display: flex
+  flex-wrap: wrap
+  > a
+    margin-right: 1rem
+    img
+      width: 2rem
+
+.featured-list
+  @include reset-list
+  display: flex
+  > li
+    padding: 1rem
+    padding-bottom: 0rem
+    width: 30%
+  > li > a > img
+    border-radius: 1rem
+  @media (max-width: $breakpoint-mobile)
+    flex-direction: column
+    > li
+      display: flex
+      width: 100%
+    > li > a > img
+      width: 100px
+      margin-right: 1rem
+
+// Projects page
+
+.projects-list
+  @include reset-list
+  display: flex
+  flex-wrap: wrap
+  @media (max-width: $breakpoint-mobile)
+      flex-direction: column
+      width: 100%
+  > li
+    width: 30%
+    margin-right: 2rem
+    margin-bottom: 2rem
+    filter: drop-shadow(10px 10px 0px #2b2b2b)
+    @media (max-width: $breakpoint-mobile)
+      width: 100%
+  a
+    display: flex
+    flex-direction: column
+    width: 100%
+    height: 16rem
+    background-color: whitesmoke
+    color: $text-color
+    text-decoration: none
+    overflow: hidden
+    border-radius: 1rem
+    outline: 2px solid black
+    transition: 0.05s
+    @media (max-width: $breakpoint-mobile)
+      flex-direction: row
+      height: 10rem
+    &:focus, &:hover
+      background-color: white
+      transform: translate(0px, -0.25rem)
+    > img
+      width: 100%
+      height: 10rem
+      object-fit: cover
+      image-rendering: crisp-edges 
+      outline: 2px solid black
+      @media (max-width: $breakpoint-mobile)
+        width: 35%
+        height: 100%
+    > div
+      margin: 0.5rem 1rem
+    > div > h3
+      margin: 0.1rem 0rem
+      font-size: 1.2rem
+
+// Individual pages
+
+.soundtrack
+  display: flex 
+  > div
+    width: 100%
+    > p
+      display: none
+  > div > div
+    margin-bottom: 1rem
+    padding-top: 0.5rem
+    background-color: whitesmoke
+    flex-grow: 1
+    p
+      margin: 0.25rem 1rem
+    audio
+      width: 100%
+  > img
+    margin-right: 2rem
+    width: min(50%, 400px)
+    object-fit: contain
+    object-position: top
+  @media (max-width: $breakpoint-mobile)
+    flex-direction: column
+    > div
+      max-width: 100%
+    > img
+      margin-right: 0rem
+      width: 100%
+
+.gallery-2x2
+  display: flex
+  flex-direction: row
+  flex-wrap: wrap
+  > p
+    display: none
+  > figure
+    max-width: 40%
+    @media (max-width: $breakpoint-mobile)
+      flex-direction: column
+      max-width: none
+    > img
+      display: block
+      width: 100%
+    > figcaption
+      padding: 1rem
+      background-color: $background-color
+
+.gallery-3xn > p
+  display: flex
+  flex-direction: row
+  flex-wrap: wrap
+  justify-content: center
+  > img
+    max-width: 200px
+    @media (max-width: $breakpoint-mobile)
+      max-width: 30%

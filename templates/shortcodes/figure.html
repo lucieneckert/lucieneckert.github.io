@@ -1,0 +1,13 @@
+<figure>
+
+  {% if vid %}
+  <video src="{{ src }}" style="max-width: 100%;" controls></video>
+  {% else %}
+  <img src="{{ src }}" alt="{% if alt %}{{ alt }}{% endif %}">
+  {% endif %}
+
+  {% if caption %}
+  <figcaption>{{ caption }}</figcaption>
+  {% endif %}
+
+</figure>
