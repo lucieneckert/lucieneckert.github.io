@@ -8,7 +8,7 @@ thumbnail = "album.bmp"
 tags = ["Ableton"]
 +++
 
-This is the soundtrack for Ragdoll Royale. Each background track comes in a "quiet" and "chaotic" variant -- each playing during either the drawing or simulating phase of a player's turn in the game. As one central theme of our game is the contrast between the careful drawing and planning of one phase versus the more intense and vaguely-predictable shenanigans of the other, the music was designed to reflect this. I also tried to incorporate the same motif (mostly subtly) into each of the tracks and emphasized a theremin-esque leading instrument to keep things cohesive and "spooooky."
+This is the soundtrack for Ragdoll Royale. Each background track comes in a "quiet" and "chaotic" variant -- playing during either the drawing or simulating phase of a player's turn in the game. As one central theme of our game is the contrast between the careful drawing and planning of one phase versus the more intense and vaguely-predictable shenanigans of the other, the music was designed to reflect this. I also tried to incorporate the same motif (mostly subtly) into each of the tracks, and emphasized a theremin-esque leading instrument to keep things cohesive and "spooooky."
 
 {% soundtrack(cover_path="album.bmp") %}
 {{ audio(src="menutheme.ogg", label="Menu Theme") }}

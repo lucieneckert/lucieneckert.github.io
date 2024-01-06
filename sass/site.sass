@@ -81,6 +81,9 @@ img
   max-width: 100%
   image-rendering: crisp-edges
 
+blockquote
+  font-style: italic
+
 // Index page
 
 .site-name
@@ -241,10 +244,12 @@ img
   > p
     display: none
   > figure
-    max-width: 40%
+    max-width: 45%
+    margin: 1.25rem
     @media (max-width: $breakpoint-mobile)
       flex-direction: column
       max-width: none
+      margin: 0.25rem
     > img
       display: block
       width: 100%
