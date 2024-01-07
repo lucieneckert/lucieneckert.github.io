@@ -2,6 +2,7 @@
   
 $max-body-width: 1100px
 $breakpoint-mobile: 800px
+$breakpoint-mobile-cramped: 475px 
 $background-color: whitesmoke
 $foreground-color: white
 $text-color: #202020
@@ -56,6 +57,9 @@ body
   font-family: 'Atkinson Hyperlegible', sans-serif
   a
     color: $link-color
+  @media (max-width: $breakpoint-mobile)
+    margin-top: 0rem
+    padding: none
 
 main
   padding: 1rem 2rem
@@ -63,6 +67,9 @@ main
   color: $text-color
   border-radius: 1rem
   outline: 2px solid black
+  @media (max-width: $breakpoint-mobile)
+    outline: none
+    border-radius: 0rem
 
 footer
   color: dimgrey
@@ -81,6 +88,13 @@ img
   max-width: 100%
   image-rendering: crisp-edges
 
+h2
+  @media (max-width: $breakpoint-mobile)
+    font-size: 1.25rem
+
+li
+  margin-bottom: 0.5rem
+
 blockquote
   font-style: italic
 
@@ -96,7 +110,7 @@ blockquote
 
 .pfp-mobile
   border-radius: 1rem
-  max-height: 6rem
+  max-height: 5rem
   @media (min-width: $breakpoint-mobile)
     display: none
 
@@ -111,7 +125,7 @@ blockquote
   
 .intro-header
   display: flex
-  > *
+  > img
     margin-right: 1rem
   > * > h1
     margin-bottom: 0rem
@@ -120,6 +134,11 @@ blockquote
   > * > span
     font-weight: bold
     font-size: 1.25rem
+  @media (max-width: $breakpoint-mobile)
+    > * > h1
+      font-size: 1.5rem
+    > * > span
+      font-size: 1rem
   
 .intro-list 
   margin-bottom: 0rem
@@ -131,6 +150,12 @@ blockquote
       margin-right: 0.5rem
     p
       margin-top: 0rem
+      margin-bottom: 0.5rem
+
+.resume-button
+  display: flex
+  @media (max-width: $breakpoint-mobile-cramped)
+    width: 100%
 
 .intro-links
   display: flex
@@ -152,11 +177,12 @@ blockquote
   @media (max-width: $breakpoint-mobile)
     flex-direction: column
     > li
-      display: flex
-      width: 100%
+      width: calc(100% - 40px)
     > li > a > img
-      width: 100px
+      width: 100%
+      max-height: 150px
       margin-right: 1rem
+      object-fit: cover
 
 // Projects page
 
